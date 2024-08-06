@@ -726,7 +726,7 @@ section,
 
 .section-bg:before {
   content: "";
-  background-color: var(--background-color);
+  background-color: #ff852b;
   position: absolute;
   bottom: 110px;
   top: 90px;
