@@ -5,6 +5,7 @@
 
 /* COLORES GLOBALES  */
 :root { 
+  color-scheme: light;
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #111111; /* Color for headings, subheadings and title throughout the website */
@@ -15,6 +16,7 @@
 
 /* NAV MENU COLORES */
 :root {
+  color-scheme: light;
   --nav-color: #212529;  /* The default color of the main navmenu links */
   --nav-hover-color: #ff8601; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
