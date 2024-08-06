@@ -475,17 +475,34 @@ h6 {
 
 
 .footer .footer-about .logo img {
-  margin-right: 6px;
+  max-width: 465px;
   height: auto;
-  width: 100%;
-  margin: -40px -60px;
+  margin-top: -200px;
+  margin-bottom: -190px;
 }
+
+
 
 .footer .footer-about .logo span {
   font-size: 26px;
   font-weight: 700;
   letter-spacing: 1px;
   color: var(--heading-color);
+}
+
+.footer .footer-about .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Asegura que el contenedor del logo ocupe todo el espacio disponible */
+  margin: 0; /* Remueve cualquier margen adicional */
+}
+
+.footer .footer-about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* Asegúrate de que no haya padding que desplace el logo */
 }
 
 .footer .footer-about p {
@@ -619,6 +636,13 @@ h6 {
   font-size: 13px;
 }
 
+@media (max-width: 768px) {
+  .footer .footer-about .logo img {
+    max-width: 430px;
+    
+  }
+}
+
 
 /*--------------------------------------------------------------
 # DESHABILITAR AOS ANIMATION DELAY EN CELULARES
@@ -643,9 +667,23 @@ h6 {
 }
 
 .page-title h1 {
-  font-size: 28px;
+  font-size: 52px;
   font-weight: 700;
   margin: 0;
+}
+
+.page-title h1::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  margin-bottom: 5px;
 }
 
 .page-title .breadcrumbs ol {
@@ -991,6 +1029,7 @@ section,
 text-align: center;
 }
 
+
 .titulo-nosotros h2:after {
   content: "";
   position: absolute;
@@ -1072,12 +1111,17 @@ text-align: center;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   position: relative;
   z-index: 1;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+
+  
 }
 .image-container::after {
   content: '';
   position: absolute;
   top: 20px;
-  left: 20px;
+  left: 11px;
   width: 100%;
   height: 100%;
   border: 3px solid #ffffff; 
@@ -1100,6 +1144,12 @@ text-align: center;
   max-width: 100%; 
   height: auto;
   margin-top: -25px;
+}
+
+@media (max-width: 768px) {
+  .image-row {
+    flex-direction: column;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1167,6 +1217,7 @@ text-align: center;
   width: 100px;
   height: auto;
   margin-right: 15px;
+  object-fit: contain;
   line-height: 0;
 }
 
@@ -1400,6 +1451,10 @@ text-align: center;
   line-height: 1.2;
 }
 
+.portfolio .portfolio-content .portfolio-info .preview-one-link {
+  left: calc(50% - 11px);
+}
+
 .portfolio .portfolio-content .portfolio-info .preview-link:hover,
 .portfolio .portfolio-content .portfolio-info .details-link:hover {
   color: var(--accent-color);
@@ -1423,6 +1478,24 @@ text-align: center;
 /*--------------------------------------------------------------
 # Portfolio Details Section
 --------------------------------------------------------------*/
+.titulo-proyectos {
+  text-align: center;
+  color: black;
+  font-size: 52px;
+}
+
+.titulo-proyectos::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: white;
+  left: 0px;
+  bottom: 0;
+  margin: auto;
+}
+
 .portfolio-details .portfolio-details-slider img {
   width: 100%;
 }
@@ -1655,7 +1728,7 @@ text-align: center;
 .whatsapp-button {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 5px;
   z-index: 1000;
   display: flex;
   justify-content: center;
