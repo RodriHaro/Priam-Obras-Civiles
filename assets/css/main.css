@@ -354,13 +354,15 @@ h6 {
   .navmenu ul {
     display: none;
     position: absolute;
-    inset: 60px 20px 20px 20px;
+    inset: 84px 0px 415px 0px;
     padding: 10px 0;
     margin: 0;
-    border-radius: 6px;
+    border-radius: 2px;
     background-color: var(--nav-mobile-background-color);
     overflow-y: auto;
-    transition: 0.3s;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
     z-index: 9998;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
   }
@@ -375,7 +377,7 @@ h6 {
     align-items: center;
     justify-content: space-between;
     white-space: nowrap;
-    transition: 0.3s;
+    transition: color 0.5s ease-in-out;
   }
 
   .navmenu a i,
@@ -389,7 +391,7 @@ h6 {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    transition: 0.3s;
+    transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
     background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
   }
 
@@ -458,6 +460,45 @@ h6 {
   .mobile-nav-active .navmenu>ul {
     display: block;
   }
+
+  .mobile-nav-active .navmenu ul {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}
+.navmenu ul li {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideIn 0.5s forwards;
+}
+
+.navmenu ul li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.navmenu ul li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.navmenu ul li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.navmenu ul li:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.navmenu ul li:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+@keyframes slideIn {
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
 }
 
 /*--------------------------------------------------------------
